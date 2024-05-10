@@ -1,6 +1,6 @@
 #!name=Moniepoint
 #!desc=Telegram @niuniujun
-#!system=iOS
+#!system=ios
 
 [MITM]
 hostname = users.mab.console.teamapt.com, api.smileidentity.com
