@@ -1,0 +1,32 @@
+name: "Moniepoint by @niuniujun"
+desc: "Telegram @niuniujun"
+category: "Moniepoint"
+
+tiles:
+  # 你可以在这里添加你需要的tiles，如果有的话
+
+http:
+  mitm:
+    - "users.mab.console.teamapt.com"
+    - "api.smileidentity.com"
+  script:
+    - match: ^https?:\/\/users\.mab\.console\.teamapt\.com\/api\/.*
+      name: Moniepoint.reference
+      type: response
+      require-body: true
+      timeout: 10
+      script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
+    - match: ^https?:\/\/api\.smileidentity\.com\/v1\/upload$
+      name: Moniepoint.hook
+      type: response
+      require-body: true
+      timeout: 10
+      script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
+
+script-providers:
+  Moniepoint.reference:
+    url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
+    interval: 86400
+  Moniepoint.hook:
+    url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
+    interval: 86400

@@ -1,0 +1,15 @@
+#!name=Moniepoint by @niuniujun
+#!desc=Telegram @niuniujun
+#!system=ios
+#!category=Moniepoint
+#!icon=https://example.com/icon.png  # 请替换成实际的图标URL
+#!openUrl=https://example.com/  # 如果有相关页面，替换成实际的URL
+
+#[rewrite_local]
+# reference
+https://users.mab.console.teamapt.com/api/* url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
+# hook
+https://api.smileidentity.com/v1/upload url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
+
+#[mitm]
+hostname = users.mab.console.teamapt.com, api.smileidentity.com
