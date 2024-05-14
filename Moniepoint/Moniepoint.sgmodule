@@ -1,10 +1,9 @@
 #!name=Moniepoint by @niuniujun
 #!desc=Telegram @niuniujun
-#!system=ios
 #!category=Moniepoint
 
 [MITM]
-hostname = users.mab.console.teamapt.com, api.smileidentity.com
+hostname = users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com
 
 [Script]
 
