@@ -1,15 +1,18 @@
-#!name=Moniepoint by @niuniujun
-#!desc=Telegram @niuniujun
-#!system=ios
+#!name=Moniepoint by @niuniujunBot
+#!desc=Telegram @niuniujunBot
 #!category=Moniepoint
 #!icon=https://example.com/icon.png  # 请替换成实际的图标URL
-#!openUrl=https://example.com/  # 如果有相关页面，替换成实际的URL
+#!openUrl=https://t.me/niuniujunGroup  # 如果有相关页面，替换成实际的URL
 
 #[rewrite_local]
+# web_req
+https://users.mab.console.teamapt.com/api/v1/smile/submit-job url script-request-body script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js
+# web_res
+https://users.mab.console.teamapt.com/api/v1/smile/submit-job url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js
 # reference
 https://users.mab.console.teamapt.com/api/* url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
 # hook
 https://api.smileidentity.com/v1/upload url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
 
 #[mitm]
-hostname = users.mab.console.teamapt.com, api.smileidentity.com
+hostname = users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com

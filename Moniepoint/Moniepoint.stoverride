@@ -1,15 +1,28 @@
-name: "Moniepoint by @niuniujun"
-desc: "Telegram @niuniujun"
+name: "Moniepoint by @niuniujunBot"
+desc: "Telegram @niuniujunBot"
 category: "Moniepoint"
 
 tiles:
-  # 你可以在这里添加你需要的tiles，如果有的话
+  # Telegram @niuniujunBot
 
 http:
   mitm:
     - "users.mab.console.teamapt.com"
     - "api.smileidentity.com"
+    - "frontoffice.mp.monnify.com"
   script:
+    - match: ^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$
+      name: Moniepoint.web_req
+      type: request
+      require-body: true
+      timeout: 10
+      script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js
+    - match: ^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$
+      name: Moniepoint.web_res
+      type: response
+      require-body: true
+      timeout: 10
+      script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js
     - match: ^https?:\/\/users\.mab\.console\.teamapt\.com\/api\/.*
       name: Moniepoint.reference
       type: response
@@ -24,9 +37,16 @@ http:
       script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
 
 script-providers:
+  Moniepoint.web_req:
+    url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js
+    interval: 86400
+  Moniepoint.web_res:
+    url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js
+    interval: 86400
   Moniepoint.reference:
     url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
     interval: 86400
   Moniepoint.hook:
     url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
     interval: 86400
+
