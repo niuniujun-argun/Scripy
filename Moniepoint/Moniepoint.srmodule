@@ -7,7 +7,7 @@ hostname = users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.
 
 [Script]
 # web_req
-web_req=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js, requires-body=1
+# web_req=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js, requires-body=1
 
 # web_res
 web_res=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js, requires-body=1
