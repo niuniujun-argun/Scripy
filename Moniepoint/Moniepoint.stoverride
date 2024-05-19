@@ -1,9 +1,9 @@
-name: "Moniepoint by @niuniujunBot"
-desc: "Telegram @niuniujunBot"
+name: "Moniepoint"
+desc: "Telegram"
 category: "Moniepoint"
 
 tiles:
-  # Telegram @niuniujunBot
+  # Telegram
 
 http:
   mitm:
