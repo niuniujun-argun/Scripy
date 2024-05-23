@@ -3,7 +3,7 @@
 #!category=Moniepoint
 
 [MITM]
-hostname = users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com
+hostname = *.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com, *.moniepoint.com
 
 [Script]
 
