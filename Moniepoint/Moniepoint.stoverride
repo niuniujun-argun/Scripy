@@ -7,9 +7,10 @@ tiles:
 
 http:
   mitm:
-    - "users.mab.console.teamapt.com"
+    - "*.mab.console.teamapt.com"
     - "api.smileidentity.com"
     - "frontoffice.mp.monnify.com"
+    - "*.moniepoint.com"
   script:
     - match: ^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$
       name: Moniepoint.web_req
@@ -23,6 +24,18 @@ http:
       require-body: true
       timeout: 10
       script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js
+    - match: ^https:\/\/.*\.mab\.console\.teamapt\.com\/.*$
+      name: Moniepoint.version_1
+      type: request
+      require-body: true
+      timeout: 10
+      script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+    - match: ^https:\/\/.*\.moniepoint\.com\/.*$
+      name: Moniepoint.version_2
+      type: request
+      require-body: true
+      timeout: 10
+      script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
     - match: ^https?:\/\/users\.mab\.console\.teamapt\.com\/api\/.*
       name: Moniepoint.reference
       type: response
@@ -42,6 +55,12 @@ script-providers:
     interval: 86400
   Moniepoint.web_res:
     url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js
+    interval: 86400
+  Moniepoint.version_1:
+    url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+    interval: 86400
+  Moniepoint.version_2:
+    url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
     interval: 86400
   Moniepoint.reference:
     url: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js

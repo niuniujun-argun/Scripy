@@ -4,13 +4,19 @@
 
 #[rewrite_local]
 # web_req
-https://users.mab.console.teamapt.com/api/v1/smile/submit-job url script-request-body script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js
+https://users.mab.console.teamapt.com/api/v1/smile/submit-job url script-request-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js
 # web_res
 https://users.mab.console.teamapt.com/api/v1/smile/submit-job url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js
+# version
+https://*.mab.console.teamapt.com/* url script-request-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+# version
+https://*.moniepoint.com/* url script-request-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+# web_reference
+https://frontoffice.mp.monnify.com/api/* url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
 # reference
 https://users.mab.console.teamapt.com/api/* url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js
 # hook
 https://api.smileidentity.com/v1/upload url script-response-body https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
 
-#[mitm]
-hostname = users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com
+[mitm]
+hostname = *.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com, *.moniepoint.com
