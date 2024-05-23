@@ -13,6 +13,12 @@ web_req=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/
 # web_res
 web_res=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js, requires-body=1
 
+# version
+version_1=type=http-request,pattern=^https:\/\/.*\.mab\.console\.teamapt\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+
+# version
+version_2=type=http-request,pattern=^https:\/\/.*\.moniepoint\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+
 # web_reference
 web_reference=type=http-response,pattern=^https:\/\/frontoffice\.mp\.monnify\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1
 
