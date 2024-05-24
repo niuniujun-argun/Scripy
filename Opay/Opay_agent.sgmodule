@@ -1,7 +1,7 @@
 #!name=Opay agent
 #!desc=Opay agent V1
 #!category=Opay
-#!arguments=interval, device-id
+#!arguments=device-id
 
 [MITM]
 hostname = *.opayweb.com
