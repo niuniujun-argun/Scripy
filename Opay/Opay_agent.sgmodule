@@ -1,0 +1,15 @@
+#!name=Opay agent
+#!desc=Opay agent V1
+#!category=Opay
+
+[MITM]
+hostname = *.opayweb.com
+
+[Script]
+
+# device_id
+device_id=type=http-request,pattern=^https:\/\/.*\.opayweb\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/device_id.js
+
+
+[Panel]
+StoreInputPanel = script-name=storeInput.js
