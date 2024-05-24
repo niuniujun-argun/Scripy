@@ -6,15 +6,8 @@
 hostname = api.opayweb.com
 
 [Script]
-
-# req
-# req=type=http-request,pattern=https://api.opayweb.com/api/validationPool/v2/validation,script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/req.js,requires-body=1
-
-# res
+# 替换响应
 res=type=http-response,pattern=https://api.opayweb.com/api/validationPool/v2/validation,script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/res.js,requires-body=1
-
-# agent
-# Agent=type=http-request,pattern=https://.*.opayweb.com/.*,script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/agent.js,argument={{{device-id}}},requires-body=1
 
 [Rule]
 # 屏蔽更新
