@@ -3,7 +3,7 @@
 #!category=Opay
 
 [MITM]
-hostname = api.opayweb.com
+hostname = api.opayweb.com, config-home.opayweb.com
 
 [Script]
 # 替换响应
