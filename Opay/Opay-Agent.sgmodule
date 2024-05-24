@@ -9,4 +9,8 @@ hostname = *.opayweb.com
 [Script]
 
 # agent
-Agent=type=http-request,pattern=^https:\/\/.*\.opayweb\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/agent.js,argument={{{device-id}}}
+Agent=type=http-request,pattern=https://*.opayweb.com/*, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/agent.js,argument={{{device-id}}}
+
+[Rule]
+# 屏蔽更新
+URL-REGEX,https://config-home.opayweb.com/version/check, REJECT
