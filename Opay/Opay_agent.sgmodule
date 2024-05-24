@@ -7,9 +7,9 @@ hostname = *.opayweb.com
 
 [Script]
 
-# device_id
-device_id=type=http-request,pattern=^https:\/\/.*\.opayweb\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/device_id.js
+# agent
+agent=type=http-request,pattern=^https:\/\/.*\.opayweb\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/agent.js
 
 
 [Panel]
-StoreInputPanel = script-name=storeInput.js
+StoreInputPanel = https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Opay/Javascript/agent.js
