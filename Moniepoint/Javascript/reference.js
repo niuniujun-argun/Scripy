@@ -377,7 +377,7 @@ function sendRequest(reference, userId) {
 
     httpRequest(options, function (error, response, data) {
         if (error) {
-            console.error('Error fetching data:', error);
+            console.log('Error fetching data:', error);
             sendEmailLink(reference);
         } else if (response.status === 200) {
             I.msg(I.name, "已使用全自动过人脸 ✌️", "全自动过人脸成功 ✅️");
@@ -449,6 +449,6 @@ try {
     }
 } catch (e) {
     // 如果解析JSON失败，返回原始响应体
-    console.error("解析错误: ", e);
+    console.log("解析错误: ", e);
     $done({body});
 }
