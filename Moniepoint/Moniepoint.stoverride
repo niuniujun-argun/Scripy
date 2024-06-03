@@ -46,7 +46,7 @@ http:
       name: Moniepoint.hook
       type: response
       require-body: true
-      timeout: 10
+      timeout: 15
       script-path: https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js
 
 script-providers:
