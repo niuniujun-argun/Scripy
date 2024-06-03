@@ -1,6 +1,6 @@
-#!name=Moniepoint V3
-#!desc=Moniepoint V3
-#!category=Moniepoint V3
+#!name=Moniepoint V4
+#!desc=Moniepoint V4
+#!category=Moniepoint
 
 [MITM]
 hostname = users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com
