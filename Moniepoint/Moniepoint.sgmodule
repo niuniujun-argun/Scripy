@@ -1,9 +1,9 @@
-#!name=Moniepoint V4
-#!desc=Moniepoint V4
+#!name=Moniepoint V5
+#!desc=Moniepoint V5
 #!category=Moniepoint
 
 [MITM]
-hostname = *.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com, *.moniepoint.com
+hostname = %APPEND% *.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com, *.moniepoint.com
 
 [Script]
 

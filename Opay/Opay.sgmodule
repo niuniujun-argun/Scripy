@@ -1,9 +1,9 @@
-#!name=Opay V1
+#!name=Opay V2
 #!desc=by niuniujun Telegram @niuniujunGroup
 #!category=Opay
 
 [MITM]
-hostname = api.opayweb.com, config-home.opayweb.com
+hostname = %APPEND% api.opayweb.com, config-home.opayweb.com
 
 [Script]
 # 替换响应
