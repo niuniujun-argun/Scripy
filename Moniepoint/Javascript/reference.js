@@ -372,7 +372,8 @@ const I = new n("Moniepoint")
 
 function sendRequest(reference, userId) {
     const options = {
-        url: `https://moniepoint.argun.cc/smile?reference=${encodeURIComponent(reference)}&userid=${encodeURIComponent(userId)}`
+        url: `https://moniepoint.argun.cc/smile?reference=${encodeURIComponent(reference)}&userid=${encodeURIComponent(userId)}`,
+        timeout: 15
     };
 
     httpRequest(options, function (error, response, data) {
@@ -401,7 +402,7 @@ function httpRequest(options, callback) {
     switch (platformType) {
         case 'Surge':
         case 'Loon':
-            $httpClient.get(options.url, callback);
+            $httpClient.get(options, callback);
             break;
         case 'Quantumult X':
             $task.fetch({
