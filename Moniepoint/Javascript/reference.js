@@ -439,18 +439,19 @@ try {
     // 检查JSON对象中是否存在reference键和provider是否为"SMILE_ID"
     if (obj.reference && obj.provider === "SMILE_ID") {
         // 检查当前环境是否是Surge
-        if (I.platform() === "Surge") {
-            // 如果存在userId，则发起请求，否则发送邮件
-            if (obj.userId) {
-                console.log(`userId`, obj.userId);
-                sendRequest(obj.reference, obj.userId);
-            } else {
-                sendEmailLink(obj.reference);
-            }
-        } else {
-            // 对于非Surge环境，直接发送邮件链接
-            sendEmailLink(obj.reference);
-        }
+        sendEmailLink(obj.reference);
+        // if (I.platform() === "Surge") {
+        //     // 如果存在userId，则发起请求，否则发送邮件
+        //     if (obj.userId) {
+        //         console.log(`userId`, obj.userId);
+        //         sendRequest(obj.reference, obj.userId);
+        //     } else {
+        //         sendEmailLink(obj.reference);
+        //     }
+        // } else {
+        //     // 对于非Surge环境，直接发送邮件链接
+        //     sendEmailLink(obj.reference);
+        // }
     } else {
         $done({body}); // 如果不符合条件，返回原始响应体
     }
