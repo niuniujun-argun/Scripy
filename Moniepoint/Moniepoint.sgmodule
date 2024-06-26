@@ -1,29 +1,23 @@
-#!name=Moniepoint V6
-#!desc=Moniepoint V6
+#!name=Moniepoint 过人脸 V7
+#!desc=过人脸 By @niuniujunBot
 #!category=Moniepoint
 
 [MITM]
-hostname = %APPEND% *.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com, *.moniepoint.com
+hostname = %APPEND% users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com
 
 [Script]
 
 # web_req
-web_req=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js, requires-body=1
+webreq=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js, requires-body=1
 
 # web_res
-web_res=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js, requires-body=1
-
-# version
-version_1=type=http-request,pattern=^https:\/\/.*\.mab\.console\.teamapt\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
-
-# version
-version_2=type=http-request,pattern=^https:\/\/.*\.moniepoint\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+webres=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js, requires-body=1
 
 # web_reference
-web_reference=type=http-response,pattern=^https:\/\/frontoffice\.mp\.monnify\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1
+webreference=type=http-response,pattern=^https:\/\/frontoffice\.mp\.monnify\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1
 
 # reference
-reference=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1, timeout=30
+reference=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1, timeout=15
 
 # hook
 hook=type=http-response,pattern=^https:\/\/api\.smileidentity\.com\/v1\/upload$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js, requires-body=1

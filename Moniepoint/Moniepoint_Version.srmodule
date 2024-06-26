@@ -1,0 +1,14 @@
+#!name=Moniepoint 旧版 V1
+#!desc=将版本号替换为新版本 @niuniujunBot
+#!category=Moniepoint
+
+[MITM]
+hostname = %APPEND% *.mab.console.teamapt.com, *.moniepoint.com
+
+[Script]
+
+# version
+version_1=type=http-request,pattern=^https:\/\/.*\.mab\.console\.teamapt\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
+
+# version
+version_2=type=http-request,pattern=^https:\/\/.*\.moniepoint\.com\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/client_version.js
