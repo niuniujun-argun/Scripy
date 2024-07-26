@@ -1,0 +1,19 @@
+#!name=Chipper辅助V4 By @niuniujunGroup
+#!desc=1.邮箱过人脸 2.USDT入金 3.跳过Pin 4.禁止更新 By @niuniujunGroup
+#!category=Chipper
+
+[MITM]
+hostname = %APPEND% api.chippercash.com, compliance.chippercash.com, auth.chippercash.com
+
+[Script]
+# 强制跳过 Pin
+pin=type=http-response,pattern=https://auth.chippercash.com/pin/validate, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipPin.js, requires-body=1
+
+# 禁止强制更新
+pin=type=http-response,pattern=https://api.chippercash.com/v1/health/appversion, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipUpdate.js, requires-body=1
+
+# 展示入金界面
+usdt=type=http-response,pattern=https://api.chippercash.com/v1/users/accounts/configuration, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/showUSDXDeposits.js, requires-body=1
+
+# 邮箱验证人脸
+frozen=type=http-response,pattern=https://compliance.chippercash.com/account/configuration, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Chipper/Javascript/skipFrozen.js, requires-body=1
