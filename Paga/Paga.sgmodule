@@ -1,0 +1,10 @@
+#!name=Paga V1
+#!desc=by niuniujun Telegram @niuniujunGroup
+#!category=Paga
+
+[MITM]
+hostname = %APPEND% www.mypaga.com
+
+[Script]
+# 替换响应
+res=type=http-response,pattern=https://www.mypaga.com/paga-webservices/customer-mobile/secured/getUserData/v3,script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Paga/JavaScript/card.js,requires-body=1
