@@ -1,24 +1,26 @@
-#!name=Moniepoint 过人脸 V7
-#!desc=过人脸
+#!name=Moniepoint 过人脸 V8
+#!desc=访问 moniepoint.argun.cc 查看模块是否安装成功
 #!category=Moniepoint
 
 [MITM]
-hostname = %APPEND% users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com
+hostname = %APPEND% users.mab.console.teamapt.com, api.smileidentity.com, frontoffice.mp.monnify.com, moniepoint.argun.cc
 
 [Script]
 
 # web_req
-webreq=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_req.js, requires-body=1
+webreq=type=http-request,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://gist.githubusercontent.com/niuniujun-argun/93836cd204a53b3f774b13875293366b/raw/b8a0e7db56fe5a6b72225625aac0708498e08963/moniepoint_web_req.js, requires-body=1
 
 # web_res
-webres=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js, requires-body=1
+# web_res=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/v1\/smile\/submit-job$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/web_reference_res.js, requires-body=1
 
 # web_reference
-webreference=type=http-response,pattern=^https:\/\/frontoffice\.mp\.monnify\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1
+web_reference=type=http-response,pattern=^https:\/\/frontoffice\.mp\.monnify\.com\/api\/.*$, script-path=https://gist.githubusercontent.com/niuniujun-argun/91ad26e169739b5afe53d3c24099b8d4/raw/4aacdcb46fd297eb196000d43d881a07b4a23238/moniepoint_smile.js, requires-body=1
 
 # reference
-reference=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/.*$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/reference.js, requires-body=1, timeout=15
+reference=type=http-response,pattern=^https:\/\/users\.mab\.console\.teamapt\.com\/api\/.*$, script-path=https://gist.githubusercontent.com/niuniujun-argun/91ad26e169739b5afe53d3c24099b8d4/raw/4aacdcb46fd297eb196000d43d881a07b4a23238/moniepoint_smile.js, requires-body=1, timeout=15
 
 # hook
 hook=type=http-response,pattern=^https:\/\/api\.smileidentity\.com\/v1\/upload$, script-path=https://raw.githubusercontent.com/niuniujun-argun/Scripy/main/Moniepoint/Javascript/hook.js, requires-body=1
 
+# 查看模块是否安装成功
+check_status=type=http-response,pattern=^https:\/\/moniepoint\.argun\.cc\/$, script-path=https://gist.githubusercontent.com/niuniujun-argun/32a96eadc69d76edcf9c11bf56c488ae/raw/a10d59ad052eef52ff18078147cbe50c26852cf5/moniepoint_check_status.js, requires-body=1
